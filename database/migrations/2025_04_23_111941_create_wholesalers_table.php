@@ -12,21 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('wholesalers', function (Blueprint $table) {
-            $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->enum('gender',['male','female'])->default('male');
-            $table->date('dob');
+            $table->id()->autoIncrement();
+            $table->string('fullname',64);
+            $table->enum('gender',['male','female']);
+            $table->integer('age',2);
             $table->enum('customer_type',['wholesalers']);
-            $table->string('gst_no');
-            $table->string('address');
+            $table->string('gst_no')->nullable();
+            $table->string('address',128);
 
-            $table->string('state');
-            $table->integer('postcode');
-            $table->string('business_name');
-            $table->integer('adharcard_no');
-            $table->string('city');
-            $table->string('profile_img');
+            $table->string('state',16);
+            $table->integer('postcode',6);
+            $table->string('business_name',32);
+            $table->integer('adharcard_no',16);
+            $table->string('city',32);
+            $table->string('profile_img')->nullable();
              
             $table->timestamps();
         });

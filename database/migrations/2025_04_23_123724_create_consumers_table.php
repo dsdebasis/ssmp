@@ -12,18 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('consumers', function (Blueprint $table) {
-            $table->id();
-            $table->string('fullname');
+            $table->id()->autoIncrement();
+            $table->string('fullname',32);
 
             $table->enum('gender', ['male', 'female'])->default('male');
           
             $table->enum('customer_type', ['consumers']);
            
-
-            $table->integer('mob_no');
-            $table->string('state');
-            $table->integer('postcode');
-            $table->string('city');
+            
+            $table->integer('mob_no',12);
+            $table->string('state',16);
+            $table->integer('postcode',6);
+            $table->string('city',16);
             $table->timestamps();
         });
     }

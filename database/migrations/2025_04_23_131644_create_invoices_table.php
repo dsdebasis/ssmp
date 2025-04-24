@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name');
-            $table->string('description');
-            $table->string('category');
-            $table->integer('net_item');
+            $table->string('product_name',64);
+            $table->string('description',256);
+            $table->string('category',16);
+            $table->integer('net_item',6);
             $table->integer('net_package');
             $table->decimal('mrp');
             $table->decimal('price_per-unit');
