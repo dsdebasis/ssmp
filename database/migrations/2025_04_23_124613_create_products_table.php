@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('sgst',10,2);
             $table->string('hsn_code',16);
             $table->string('description',256);
-            $table->string('weight',6);
+          
             $table->string('supplier',32);
             $table->string('image',256)->nullable();
            

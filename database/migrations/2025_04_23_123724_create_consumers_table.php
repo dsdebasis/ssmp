@@ -20,9 +20,9 @@ return new class extends Migration
             $table->enum('customer_type', ['consumers']);
            
             
-            $table->integer('mob_no',12);
+            $table->string('mob_no',12);
             $table->string('state',16);
-            $table->integer('postcode',6);
+            $table->string('postcode',6);
             $table->string('city',16);
             $table->timestamps();
         });

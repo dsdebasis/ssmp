@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreign('seller_id')->references('id')->on('salespersons');
+            // $table->foreign('seller_id')->references('id')->on('salespersons');
             $table->dateTime('sale_date')->default(now());
-            $table->foreign('product_id')->references('id')->on('products');
+            // $table->foreign('product_id')->references('id')->on('products');
             $table->string('customer_name');
-            $table->foreign('customer_type')->references('id')->on('customers');
-            $table->foreign('invoice_id')->references('id')->on('invoices');
-      
+            $table->string('customer_type');
+            // $table->foreign('invoice_id')->references('id')->on('invoices');
+           
             $table->string('product_quantity');
             $table->decimal('total_price',10,2);
             $table->string('delivery_address');

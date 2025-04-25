@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('product_name',64);
             $table->string('description',256);
             $table->string('category',16);
-            $table->integer('net_item',6);
-            $table->integer('net_package');
+            $table->integer('net_item')->default(0);
+            $table->integer('net_package')->default(0);
             $table->decimal('mrp');
             $table->decimal('price_per-unit');
-            $table->integer('invoice_no');
+            $table->string('invoice_no');
             $table->string('gst_no');
             $table->decimal('total_gst');
             $table->decimal('cgst');

@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('fullname',64);
             $table->enum('gender',['male','female']);
-            $table->integer('age',2);
+            $table->integer('age')->default(0);
             $table->enum('customer_type',['wholesalers']);
             $table->string('gst_no')->nullable();
             $table->string('address',128);
 
             $table->string('state',16);
-            $table->integer('postcode',6);
+            $table->string('postcode');
             $table->string('business_name',32);
-            $table->integer('adharcard_no',16);
+            $table->string('adharcard_no',16);
             $table->string('city',32);
             $table->string('profile_img')->nullable();
              

@@ -14,21 +14,21 @@ return new class extends Migration
         Schema::create('rawmaterial', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->dateTime('delivery_time');
-            $table->stirng('material_name',128);
-            $table->stirng('category',16);
-            $table->integer('material_quantity',6);
+            $table->string('material_name',128);
+            $table->string('category',16);
+            $table->integer('material_quantity')->default(0);
             $table->string('description',256);
             $table->string('material_type',32);
             $table->decimal('material_price',12,2);
             $table->dateTime('purchase_date',);
-            $table->stirng('supplier_name',128);
-            $table->stirng('supplier_address',256);
-            $table->stirng('buyer_name',64);
-            $table->integer('buyer_mob_no',12);
+            $table->string('supplier_name',128);
+            $table->string('supplier_address',256);
+            $table->string('buyer_name',64);
+            $table->string('buyer_mob_no',12);
             $table->string('billing_id',32)->nullable();
             $table->string('gst_no',32)->nullable();
             $table->string('invoice_no')->nullable();
-            $table->stirng('pan_no',10);
+            $table->string('pan_no',10);
             $table->timestamps();
         });
     }

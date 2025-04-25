@@ -16,15 +16,15 @@ return new class extends Migration
             $table->string('fullname',32);
             
             $table->enum('gender',['male','female']);
-            $table->integer('age',2);
+            $table->integer('age')->default(0);
             $table->enum('customer_type',['retailers']);
             $table->string('gst_no')->nullable();
             $table->string('address',128);
-             $table->integer('mob_no',12);
+             $table->string('mob_no',12);
             $table->string('state',16);
-            $table->integer('postcode',6);
+            $table->string('postcode',6);
             $table->string('business_name',128);
-            $table->integer('adhar_no',16);
+            $table->string('adhar_no',16);
             $table->string('city',16);
             $table->string('profile_img',256)->nullable();
              
